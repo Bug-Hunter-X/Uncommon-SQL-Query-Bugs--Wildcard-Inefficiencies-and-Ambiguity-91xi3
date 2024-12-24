@@ -1,0 +1,3 @@
+SELECT * FROM employees WHERE department = 'Sales' AND salary > 100000; -- This query may return unexpected results if there are multiple employees with the same name in the 'Sales' department.  The use of the wildcard character '%' can make this query less efficient and harder to debug. Consider adding a unique identifier column (such as employee ID) to avoid ambiguity.  This is especially important in larger databases. 
+
+SELECT * FROM products WHERE price > 100 AND category LIKE '%Electronics%'; -- This is another example; the use of the wildcard at the beginning and end of the 'Electronics' category makes it hard to optimize and can lead to unnecessary full table scans.  Consider more specific queries with specific criteria instead of wildcards whenever possible.
